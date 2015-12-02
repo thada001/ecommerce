@@ -7,7 +7,6 @@ angular.module('myApp').service('adminService', function($http) {
   }
 
   this.addProduct = function(product) {
-    console.log("success");
     return $http({
       method: 'POST',
       url: '/products',
@@ -16,7 +15,6 @@ angular.module('myApp').service('adminService', function($http) {
   }
 
   this.updateProduct = function(id, product) {
-    console.log("ffs", id, product);
     return $http({
       method: 'PUT',
       url: '/products/' + id,
