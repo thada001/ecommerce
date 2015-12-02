@@ -16,6 +16,7 @@ angular.module('myApp').service('adminService', function($http) {
   }
 
   this.updateProduct = function(id, product) {
+    console.log("ffs", id, product);
     return $http({
       method: 'PUT',
       url: '/products/' + id,

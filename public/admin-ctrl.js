@@ -19,9 +19,9 @@ angular.module('myApp').controller('adminCtrl', function($scope, adminService) {
   $scope.updateProduct = function(id, product) {
     console.log("bleh", id, product);
     adminService.updateProduct(id, product).then(function(res) {
-      console.log(res);
-      $scope.selectedProduct = {};
+      console.log($scope.selectedProduct);
       getProducts();
+      $scope.selectedProduct = {};
     })
   }
 

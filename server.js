@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.post('/products', function(req, res) {
   db.productList.insert(req.body, function(err, results) {
     if (!err) {
-      console.log(results);
+      //console.log(results);
       res.status(200).end();
     }
   })
@@ -37,8 +37,8 @@ app.get('/products/:id', function(req, res) {
 
 app.put('/products/:id', function(req, res) {
   console.log(req.body);
-  db.productList.update({_id: mongojs.ObjectId(req.params.id)}, {$set: req.body}, function(err, results) {
-    console.log(results);
+  db.productList.update({ _id: mongojs.ObjectId(req.params.id)}, {$set: req.body}, function(err, results) {
+    console.log(req.params);
     res.status(200).end();
   })
 })
